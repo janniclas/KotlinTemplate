@@ -1,0 +1,22 @@
+[versions]
+kotlin = "2.0.21"
+kotlinPlugin = "2.0.21"
+ktfmtPlugin = "0.20.1"
+dokkatooPlugin = "1.9.20"
+kotlinLogging = "7.0.0"
+slf4jApi = "2.0.16"
+
+[libraries]
+# Conventions Plugins
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinPlugin" }
+plugin-ktfmt = { module = "com.ncorti.ktfmt.gradle:plugin", version.ref = "ktfmtPlugin" }
+plugin-dokkatoo = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokkatooPlugin" }
+# Logging
+kotlin-loggin = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlinLogging" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4jApi" }
+slf4j-logger = { module = "org.slf4j:slf4j-simple", version.ref = "slf4jApi" }
+# Testing
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+[bundles]
+logging = ["kotlin-loggin", "slf4j-api", "slf4j-logger"]
